@@ -127,7 +127,7 @@ Document.implement({
 	},
 
 	getWindow: function(){
-		return this.window;
+		return (new Window(this.defaultView || this.parentWindow)); // CHANGE: GM Fix - David
 	}
 
 });
