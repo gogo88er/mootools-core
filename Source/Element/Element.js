@@ -457,7 +457,7 @@ Element.implement({
 	},
 
 	getWindow: function(){
-		return this.ownerDocument.window;
+		return (new Window(this.ownerDocument.defaultView || this.ownerDocument.parentWindow)); // CHANGE: For GM - David
 	},
 
 	getDocument: function(){
