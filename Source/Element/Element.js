@@ -58,7 +58,7 @@ var IFrame = new Native({
 			var host = $try(function(){
 				return iframe.contentWindow.location.host;
 			});
-			if (host && host == window.location.host){
+			if ((host && host == window.location.host) || !host){ // CHANGE: so that frames with no host work - David
 				var win = new Window(iframe.contentWindow);
 				new Document(iframe.contentWindow.document);
 				$extend(win.Element.prototype, Element.Prototype);
@@ -127,7 +127,7 @@ Document.implement({
 	},
 
 	getWindow: function(){
-		return this.window;
+		return (new Window(this.defaultView || this.parentWindow)); // CHANGE: GM Fix - David
 	}
 
 });

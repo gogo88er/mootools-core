@@ -135,6 +135,12 @@ Array.implement({
 			hex.push((bit.length == 1) ? '0' + bit : bit);
 		}
 		return (array) ? hex : '#' + hex.join('');
+	},
+	
+	copy: function(){
+		var results = [];
+		for(var i = 0, l = this.length; i < l; i++) results[i] = this[i];
+		return results;
 	}
 
 });
