@@ -142,7 +142,7 @@ Window.implement({
 	},
 
 	$$: function(selector){
-		if (arguments.length == 1 && typeof selector == 'string') return this.document.getElements(selector);
+		if (arguments.length == 1 && typeof selector == 'string') return (new Document(this.document)).getElements(selector); // CHANGE: For GM
 		var elements = [];
 		var args = Array.flatten(arguments);
 		for (var i = 0, l = args.length; i < l; i++){
