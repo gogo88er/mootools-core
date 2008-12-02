@@ -149,7 +149,7 @@ Window.implement({
 			var item = args[i];
 			switch ($type(item)){
 				case 'element': elements.push(item); break;
-				case 'string': elements.extend(this.document.getElements(item, true));
+				case 'string': (new Document(this.document)).getElements(item, true); break; // CHANGE: For GM - David
 			}
 		}
 		return new Elements(elements);
