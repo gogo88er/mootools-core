@@ -396,7 +396,7 @@ Element.implement({
 	},
 
 	appendText: function(text, where){
-		return this.grab(this.getDocument().newTextNode(text), where);
+		return this.grab((new Document(this.getDocument())).newTextNode(text), where); // CHANGE: For GM - David
 	},
 
 	grab: function(el, where){
