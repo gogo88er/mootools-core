@@ -480,8 +480,8 @@ Element.implement({
 	},
 
 	getComputedStyle: function(property){
-		if (this.currentStyle) return this.currentStyle[property.camelCase()];
-		var computed = this.getDocument().defaultView.getComputedStyle(this, null);
+		if ($(this).currentStyle) return $(this).currentStyle[property.camelCase()];        // CHANGE: Fix for GM - David
+		var computed = $(this).getDocument().defaultView.getComputedStyle($(this), null);   // CHANGE: ditto
 		return (computed) ? computed.getPropertyValue([property.hyphenate()]) : null;
 	},
 
