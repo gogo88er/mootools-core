@@ -100,7 +100,8 @@ Native.typize = function(object, family){
 		'String': ["charAt", "charCodeAt", "concat", "indexOf", "lastIndexOf", "match", "replace", "search", "slice", "split", "substr", "substring", "toLowerCase", "toUpperCase", "valueOf"]
 	};
 	for (var g in generics){
-		for (var i = generics[g].length; i--;) Native.genericize(window[g], generics[g][i], true);
+    var aObject = (g == 'Array' && Array) || (g == 'String' && String) || window[g];          // CHANGE: Fix for GM & MT1.2.1 - David
+		for (var i = generics[g].length; i--;) Native.genericize(aObject, generics[g][i], true);
 	};
 })();
 
