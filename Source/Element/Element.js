@@ -454,6 +454,10 @@ Element.implement({
 	getChildren: function(match, nocash){
 		return walk(this, 'nextSibling', 'firstChild', match, true, nocash);
 	},
+	
+	getChild: function(match, nocash){
+		return walk(this, 'nextSibling', 'firstChild', match, false, nocash);
+	},
 
 	getWindow: function(){
 		return this.ownerDocument.window;
