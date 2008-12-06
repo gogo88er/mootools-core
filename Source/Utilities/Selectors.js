@@ -151,7 +151,7 @@ Selectors.Utils = {
 		}).split(':)');
 		
 		// allows .getElement('> selector') and .getElements('> selector')
-		selector = selectors.filter(function(selector){return (selector != '');});
+		selectors = selectors.filter(function(selector){return (selector != '');});
 
 		var items, filtered, item;
 
