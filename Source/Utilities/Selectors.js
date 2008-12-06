@@ -149,6 +149,9 @@ Selectors.Utils = {
 			splitters.push(m1);
 			return ':)' + m2;
 		}).split(':)');
+		
+		// allows .getElement('> selector') and .getElements('> selector')
+		selector = selectors.filter(function(selector){return (selector != '');});
 
 		var items, filtered, item;
 
