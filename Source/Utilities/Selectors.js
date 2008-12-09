@@ -162,7 +162,7 @@ Selectors.Utils = {
 		selectors = selectors.filter(function(selector){return (selector != '');});
 		
 		if(splitters.length == selectors.length){
-			return $$('#'+this.genId(self)+' '+expression);
+			return self.getWindow().$$('#'+this.genId(self)+' '+expression);
 		}
 
 		var items, filtered, item;
