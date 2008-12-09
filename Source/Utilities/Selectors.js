@@ -141,6 +141,15 @@ Selectors.Utils = {
 			return ctx.getElementsByTagName(tag);
 		}
 	},
+	
+	genId: function(self){
+		var id = self.getProperty('id');
+		if(!id){
+			id = 'genId'+Math.round(Math.random()*1000000+(new Date()).getMilliseconds());
+			self.setProperty('id', id);
+		}
+		return id;
+	},
 
 	search: function(self, expression, local){
 		var splitters = [];
@@ -150,8 +159,11 @@ Selectors.Utils = {
 			return ':)' + m2;
 		}).split(':)');
 		
-		// allows .getElement('> selector') and .getElements('> selector')
 		selectors = selectors.filter(function(selector){return (selector != '');});
+		
+		if(splitters.length == selectors.length){
+			return $$('#'+this.genId(self)+' '+expression);
+		}
 
 		var items, filtered, item;
 
