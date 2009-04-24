@@ -132,6 +132,26 @@ relative - (Element, defaults to the document) If set, the position will be rela
 
 - [QuirksMode: Find position](http://www.quirksmode.org/js/findpos.html)
 
+Element Method: setPosition {#Element:setPosition}
+--------------------------------------------------
+
+Sets the position of the element's *left* and *top* values to the x/y positions you specify.
+
+### Syntax
+
+	myElement.setPosition(positions);
+
+### Arguments
+
+1. positions - (*object*) an object with x/y values (integers or strings, i.e. 10 or "10px")
+
+### Returns
+
+* (*element*) the element that is positioned.
+
+### Example
+
+	myElement.setPosition({x: 10, y: 100});
 
 Element Method: getCoordinates {#Element:getCoordinates}
 --------------------------------------------------------
@@ -170,7 +190,20 @@ relative - (*element*, optional) if set, the position will be relative to this e
 [Element:getPosition](#Element:getPosition)
 
 
-[$]: /Element/Element#dollar
+Element Method: getOffsetParent {#Element:getOffsetParent}
+----------------------------------------------------------
+
+Returns the parent of the element that is positioned, if there is one.
+
+### Syntax
+
+	myElement.getOffsetParent();
+
+### Returns
+
+* (*mixed*) If the element has a parent that is positioned, it returns that element, otherwise it returns *null*.
+
+[$]: /core/Element/Element#dollar
 [MDC Element:scrollLeft]: http://developer.mozilla.org/en/docs/DOM:element.scrollLeft
 [MDC Element:scrollTop]: http://developer.mozilla.org/en/docs/DOM:element.scrollTop
 [MDC Element:offsetWidth]: http://developer.mozilla.org/en/docs/DOM:element.offsetWidth

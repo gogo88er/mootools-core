@@ -1,0 +1,8 @@
+{
+	"Element": {
+		"Element.Dimensions":['offsets', 'scrollSize']
+	},
+	"Request": {
+		"Request":['all']
+	}
+}
