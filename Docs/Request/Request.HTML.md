@@ -1,4 +1,4 @@
-[Request]: /Request/Request
+[Request]: /core/Request/Request
 
 Class: Request.HTML {#Request-HTML}
 ===================================
@@ -19,6 +19,7 @@ Request Specifically made for receiving HTML.
 
 ### Options:
 
+* evalScripts  - (*boolean*: defaults to true) If set to true, `script` tags inside the response will be evaluated. This overrides the `false` default from Request.
 * update - (*element*: defaults to null) The Element to insert the response text of the Request into upon completion of the request.
 
 ### Events:
@@ -172,4 +173,4 @@ Updates the content of the Element with a Request.HTML GET request.
 
 - [$][], [Request](/Request/Request)
 
-[$]: /Element/Element/#dollar
+[$]: /core/Element/Element/#dollar

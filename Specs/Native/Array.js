@@ -149,6 +149,7 @@ describe("Array Methods", {
 
 	'should return the last item in the array': function(){
 		value_of([1,2,3,0,0,0].getLast()).should_be(0);
+		value_of([3].getLast()).should_be(3);
 	},
 
 	'should return null if there are no items': function(){
